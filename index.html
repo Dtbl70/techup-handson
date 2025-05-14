@@ -1,83 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Finder</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JB Food Finder</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Add custom styles here */
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
-        }
-        .highlight:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
 </head>
-<body class="bg-gray-50">
-
-    <div class="container mx-auto p-6">
-        <h1 class="text-3xl font-bold text-center mb-6">Food Finder in JB!</h1>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6 text-center">Johor Bahru Food Recommendations</h1>
 
         <!-- Filters -->
-        <div class="flex justify-between mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div>
-                <label for="halal" class="mr-2">Halal:</label>
-                <select id="halal" class="border p-2 rounded">
+                <label for="halal" class="block font-semibold mb-1">Halal</label>
+                <select id="halal" class="w-full p-2 border rounded">
                     <option value="">All</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
             </div>
-
             <div>
-                <label for="budget" class="mr-2">Budget:</label>
-                <select id="budget" class="border p-2 rounded">
+                <label for="budget" class="block font-semibold mb-1">Budget</label>
+                <select id="budget" class="w-full p-2 border rounded">
                     <option value="">All</option>
-                    <option value="$">\$</option>
+                    <option value="$">$</option>
                     <option value="$$">$$</option>
                     <option value="$$$">$$$</option>
                 </select>
             </div>
-
             <div>
-                <label for="type" class="mr-2">Food Type:</label>
-                <select id="type" class="border p-2 rounded">
+                <label for="type" class="block font-semibold mb-1">Type</label>
+                <select id="type" class="w-full p-2 border rounded">
                     <option value="">All</option>
-                    <option value="local food">Local Food</option>
-                    <option value="cafe">Cafe</option>
-                    <option value="restaurant">Restaurant</option>
+                    <option value="Cafe">Cafe</option>
+                    <option value="Local Food">Local Food</option>
+                    <option value="Restaurant">Restaurant</option>
                 </select>
             </div>
         </div>
 
-        <!-- Recommendations Grid -->
-        <div id="recommendations" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Dynamic cards will be rendered here -->
+        <!-- Recommendations -->
+        <div id="recommendations" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- JavaScript will inject cards here -->
         </div>
     </div>
 
-    <!-- Google Sign-In Button -->
-    <div class="flex justify-center mt-6">
-    <div id="g_id_onload"
-         data-client_id="YOUR_VALID_GOOGLE_CLIENT_ID_FROM_CLOUD_CONSOLE"
-         data-callback="handleCredentialResponse">
-    </div>
-      <div class="g_id_signin"
-         data-type="standard"
-         data-shape="rectangular"
-         data-theme="outline"
-         data-text="sign_in_with"
-         data-size="large"
-         data-logo_alignment="left">
-      </div>
-    </div>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="script.js"></script>
-
+    <script src="app.js"></script>
 </body>
 </html>
