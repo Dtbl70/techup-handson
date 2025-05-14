@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JB Food Finder</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EatWhereJB Fast recommender</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 p-6">
-    <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl font-bold mb-6 text-center">Johor Bahru Food Recommendations</h1>
+<body>
+  <header>
+    <h1>EatWhereJB Fast Recommender</h1>
+  </header>
 
-        <!-- Filters -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div>
-                <label for="halal" class="block font-semibold mb-1">Halal</label>
-                <select id="halal" class="w-full p-2 border rounded">
-                    <option value="">All</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-            <div>
-                <label for="budget" class="block font-semibold mb-1">Budget</label>
-                <select id="budget" class="w-full p-2 border rounded">
-                    <option value="">All</option>
-                    <option value="$">$</option>
-                    <option value="$$">$$</option>
-                    <option value="$$$">$$$</option>
-                </select>
-            </div>
-            <div>
-                <label for="type" class="block font-semibold mb-1">Type</label>
-                <select id="type" class="w-full p-2 border rounded">
-                    <option value="">All</option>
-                    <option value="Cafe">Cafe</option>
-                    <option value="Local Food">Local Food</option>
-                    <option value="Restaurant">Restaurant</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Recommendations -->
-        <div id="recommendations" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- JavaScript will inject cards here -->
-        </div>
+  <div class="filters">
+    <div>
+      <label for="filter-halal">Halal: </label>
+      <select id="filter-halal">
+        <option value="all">All</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
     </div>
 
-    <script src="app.js"></script>
+    <div>
+      <label for="filter-budget">Budget: </label>
+      <select id="filter-budget">
+        <option value="all">All</option>
+        <option value="$">$$</option>
+        <option value="$$$">$$$</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="filter-food-type">Food Type: </label>
+      <select id="filter-food-type">
+        <option value="all">All</option>
+        <option value="Cafe">Cafe</option>
+        <option value="Restaurant">Restaurant</option>
+        <option value="Local Food">Local Food</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="recommendation-list">
+    <!-- Recommendation cards will be dynamically injected here -->
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
