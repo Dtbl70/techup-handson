@@ -1,11 +1,12 @@
 /* Global Body Styling */
 body {
-    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    background-color: #fff700; /* Bright sunny yellow */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #2c3e50;
     margin: 0;
     padding: 0;
 }
+
 
 /* Title */
 h1 {
