@@ -16,6 +16,26 @@ h1 {
     color: #34495e;
     font-weight: bold;
 }
+.logo-header {
+    position: fixed;         /* Stay in place as you scroll */
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 1000;           /* Stay on top of other elements */
+    background-color: white; /* Optional: background for visibility */
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-sticky {
+    height: 60px;            /* Bigger size */
+    width: auto;
+    object-fit: contain;
+}
+body {
+    padding-top: 80px; /* Push content below sticky logo */
+}
+
 .card {
   background-color: white;
   border: 1px solid #ccc;
