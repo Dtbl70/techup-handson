@@ -256,8 +256,9 @@ async function renderRecommendations() {
 
         // Calculate the distance from user and add it to each recommendation
         filteredRecommendations.forEach(rec => {
-            rec.distance = calculateDistance(userLat, userLon, rec.latitude, rec.longitude);
-        });
+rec.distance = calculateDistance(userLat, userLon, rec.latitude, rec.longitude);
+const averageSpeedKmh = 50;  // JB typical urban driving speed
+rec.drivingTimeMinutes = (rec.distance / averageSpeedKmh) * 60;
 
         // Sort recommendations by distance (nearest first)
         filteredRecommendations.sort((a, b) => a.distance - b.distance);
@@ -270,7 +271,7 @@ async function renderRecommendations() {
             const card = document.createElement('div');
             card.className = 'card col-md-3'; // 4 cards in each row (Bootstrap grid)
 
-            card.innerHTML = `
+            card.innerHTML = 
                 <div class="card-body">
                     <h5 class="card-title">${rec.name}</h5>
                     <p class="card-text">Halal: ${rec.halal}</p>
@@ -282,7 +283,7 @@ async function renderRecommendations() {
                     <a href="${rec.googleLink}" class="btn btn-primary" target="_blank">View on Google Maps</a>
                     <button class="btn btn-secondary save-favorite" data-name="${rec.name}">Save to Favorites</button>
                 </div>
-            `;
+            ;
 
             // Add event listener for saving to favorites
             const saveButton = card.querySelector('.save-favorite');
@@ -308,15 +309,16 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     return distance;
 }
 
+
 // Save favorite to local storage
 function saveToFavorites(rec) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     if (!favorites.some(fav => fav.name === rec.name)) {
         favorites.push(rec);
         localStorage.setItem('favorites', JSON.stringify(favorites));
-        alert(`${rec.name} saved to favorites!`);
+        alert(${rec.name} saved to favorites!);
     } else {
-        alert(`${rec.name} is already in your favorites.`);
+        alert(${rec.name} is already in your favorites.);
     }
 }
 
