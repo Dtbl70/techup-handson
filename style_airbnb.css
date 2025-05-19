@@ -1,0 +1,183 @@
+/* Airbnb-Style UI CSS */
+
+body {
+  background: #fff;
+  color: #222222;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.grid-container, #recommendation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  outline: none;
+}
+
+.card:focus {
+  outline: 2px solid #FF385C;
+  outline-offset: 2px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222222;
+  line-height: 1.4;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #717171;
+  line-height: 1.4;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-text.price {
+  font-size: 15px;
+  color: #222222;
+  font-weight: 500;
+}
+
+.btn, .btn-primary, .btn-secondary {
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  background: #FF385C;
+  color: #fff;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: #e11d48;
+}
+
+.btn-secondary {
+  background: #F7C59F;
+  color: #222222;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background: #ffd7b3;
+}
+
+.filters {
+  margin: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.filters label {
+  font-size: 14px;
+  color: #222222;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-control, select {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  font-size: 15px;
+  color: #222222;
+  background: #fff;
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-block;
+  background: #F7C59F;
+  color: #222222;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  margin-left: 4px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 24px 12px;
+  }
+  .grid-container, #recommendation-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px 4px;
+  }
+  .grid-container, #recommendation-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px 2px;
+  }
+  .grid-container, #recommendation-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
